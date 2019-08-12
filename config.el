@@ -48,6 +48,8 @@
    :nv "J"             #'next-5-lines
    :nv "K"             #'previous-5-lines
    :nv "L"             #'evil-end-of-visual-line
+   :n "p"              #'evil-paste-after
+   :n "P"              #'evil-paste-before
    :n "SPC o o o"      #'origami-toggle-node
    :n "SPC o o O"      #'origami-open-node-recursively
    :n "SPC o o c"      #'origami-close-node
