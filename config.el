@@ -1,16 +1,23 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here
-(load-theme 'doom-city-lights t)
-(require 'origami)
+(load-theme 'doom-challenger-deep t)
+;; (require 'origami)
 (global-origami-mode)
 (company-quickhelp-mode)
+(elcord-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'rust-mode-hook 'rust-mode)
+;; (add-hook 'rust-mode-hook 'rust-mode)
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+(add-hook 'elixir-mode-hook 'flycheck-mode)
+
+(eval-after-load 'company
+  '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
 
 ;; Keybindings
 (with-eval-after-load 'evil-maps
