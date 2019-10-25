@@ -2,6 +2,8 @@
 
 ;; Place your private configuration here
 (load-theme 'doom-challenger-deep t)
+(package-initialize)
+(require 'yasnippet)
 ;; (require 'origami)
 (global-origami-mode)
 (company-quickhelp-mode)
@@ -10,7 +12,6 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
-;; (add-hook 'rust-mode-hook 'rust-mode)
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'elixir-mode-hook
           (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
@@ -46,7 +47,7 @@
     (cl-loop for i from 1 to 5
              do (evil-next-visual-line)))
   (map!
-   :ni "<f12>"         #'treemacs
+   :niv "<f12>"        #'treemacs
    :ni "<f2>"          #'evil-save
    :ni "<f4>"          #'comment-line
    :niv "C-k"          #'move-line-up
@@ -70,8 +71,9 @@
  doom-font (font-spec :family "Source Code Pro" :size 13)
  doom-big-font (font-spec :family "Source Code Pro" :size 36)
  rust-enable-format-on-save t
- projectile-project-search-path '("~/Projetos/" "~/Documentos/Rust/engine/" "~/Documentos/Rust/math/")
+ projectile-project-search-path '("~/Projetos/C" "~/Projetos/Rust")
 
+ c-basic-offset 4
  c-default-style '((java-mode . "java")
                    (awk-mode . "awk")
                    (other . "linux")))

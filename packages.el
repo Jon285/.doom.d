@@ -9,7 +9,7 @@
 (package! company-quickhelp)
 (package! company-irony)
 (package! irony)
-(package! rust-mode)
+;; (package! rust-mode)
 (package! cargo)
 (package! elcord)
 (package! flycheck-elixir :recipe (:host github :repo "lbolla/emacs-flycheck-elixir"))
