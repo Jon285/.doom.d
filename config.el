@@ -76,4 +76,8 @@
  c-basic-offset 4
  c-default-style '((java-mode . "java")
                    (awk-mode . "awk")
-                   (other . "linux")))
+                   (other . "linux"))
+ org-agenda-files (list "~/Documentos/Agenda/geral.org")
+ org-directory "~/Documentos/Agenda"
+ org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)"))
+ )
