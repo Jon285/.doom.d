@@ -1,13 +1,17 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here
-(load-theme 'doom-challenger-deep t)
+(load-theme 'doom-dracula t)
+(doom-themes-treemacs-config)
+(doom-themes-org-config)
+
 (package-initialize)
 (require 'yasnippet)
 ;; (require 'origami)
 (global-origami-mode)
 (company-quickhelp-mode)
-(elcord-mode)
+(global-wakatime-mode)
+;; (elcord-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'c++-mode-hook 'irony-mode)
@@ -68,16 +72,35 @@
 
 ;; General config
 (setq
+
+ ;;fonts
  doom-font (font-spec :family "Source Code Pro" :size 13)
  doom-big-font (font-spec :family "Source Code Pro" :size 36)
+
+ ;; themes
+ doom-themes-enable-bold t
+ doom-themes-enable-italic t
+ doom-themes-treemacs-theme "doom-colors"
+
+ ;;misc
  rust-enable-format-on-save t
  projectile-project-search-path '("~/Projetos/C" "~/Projetos/Rust")
-
  c-basic-offset 4
  c-default-style '((java-mode . "java")
                    (awk-mode . "awk")
                    (other . "linux"))
+
+ ;; org configs
  org-agenda-files (list "~/Documentos/Agenda/geral.org")
  org-directory "~/Documentos/Agenda"
  org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAIT(w)" "|" "DONE(d)" "CANCELLED(c)"))
+
+ ;;modeline
+ doom-modeline-icon (display-graphic-p)
+ doom-modeline-major-mode-icon t
+ doom-modeline-major-mode-color-icon t
+ doom-modeline-buffer-state-icon t
+ doom-modeline-env-version t
+ all-the-icons-color-icons t
+ doom-modeline-height 30
  )
