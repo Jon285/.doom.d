@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here
-(load-theme 'doom-dracula t)
+(load-theme 'doom-outrun-electric t)
 (doom-themes-treemacs-config)
 (doom-themes-org-config)
 
