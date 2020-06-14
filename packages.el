@@ -7,8 +7,5 @@
 ;; (package! builtin-package :disable t)
 (package! origami)
 (package! company-quickhelp)
-(package! company-irony)
-(package! irony)
-(package! cargo)
 (package! elcord)
 (package! flycheck-elixir :recipe (:host github :repo "lbolla/emacs-flycheck-elixir"))
